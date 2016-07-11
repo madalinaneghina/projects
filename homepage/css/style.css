@@ -1,6 +1,6 @@
 body{
   font-family: 'Source Sans Pro', sans-serif;
-  background: #30c3a6;
+  background: #FFFFFF;
   display: block;
   text-align: center;
   border: 0;
@@ -13,12 +13,15 @@ a{
 }
 nav, .about{
   background: #FFFFFF;
-  padding: 0;
   margin: 0;
   border: 0;
 }
 nav{
   padding: 40px 0;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 3%;
+  margin-bottom: 5%;
 }
 nav ul li{
   padding: 40px;
@@ -36,6 +39,7 @@ ul li {
   display: inline;
 }
 .content{
+  background: #30c3a6;
   color: #FFFFFF;
   padding: 5% 10%;
 }
@@ -48,40 +52,62 @@ ul li {
 .about {
   padding: 5% 10%;
 }
-.about h1{
+.about h1, .photos h1{
   z-index: 1;
   overflow: hidden;
   padding: 3%;
 }
-.about h1:before, .about h1:after{
+.photos{
+  background: #30c3a6;
+  padding: 5% 10%;
+  color: #FFFFFF;
+  margin: 0;
+  border: 0;
+}
+
+.about h1:before, .about h1:after, .photos h1:before, .photos h1:after{
   content: "";
   background-color: lightgrey;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   width: 50%;
-  height: 1px;
+  height: 5px;
 }
-.about h1:before {
-    right: 0.5em;
+.about h1:before, .photos h1:before{
+    right: 10%;
     margin-left: -50%;
 }
-.about h1:after {
-    left: 0.5em;
+.about h1:after, .photos h1:after{
+    left: 10%;
     margin-right: -50%;
 }
-.photos{
-  display: inline;
-  padding: 5% 10%;
+.photos figure{
+  display: inline-block;
+  width: 30%;
+  margin: 5px;
+  padding: 10px;
+  height: 20%;
 }
-footer{
+.photos figure img{
+  border: 5px solid #FFFFFF;
+}
+.photos figure figcaption{
+  display: block;
+}
+footer {
   background: #000000;
+}
+footer ul{
   color: #FFFFFF;
+  margin: 0;
+  padding: 2%;
+  border: 0;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
-
-ul li figure img{
-  border: 10px solid #FFFFFF;
+footer img{
+  width: 20px;
+  margin: 5px;
 }
-figure figcaption{
-}
-
