@@ -39,26 +39,46 @@ ul li {
   color: #FFFFFF;
   padding: 5% 10%;
 }
-section .content h1{
-  font-weight: normal;
-  font-style: normal;
-}
 .content button{
   background-color: #000000;
   color: #FFFFFF;
   border: 0;
   padding: 5px 10px;
 }
-section .about {
+.about {
+  padding: 5% 10%;
+}
+.about h1{
+  z-index: 1;
+  overflow: hidden;
+  padding: 3%;
+}
+.about h1:before, .about h1:after{
+  content: "";
+  background-color: lightgrey;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  height: 1px;
+}
+.about h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.about h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+.photos{
+  display: inline;
   padding: 5% 10%;
 }
 footer{
   background: #000000;
   color: #FFFFFF;
 }
-.photos{
-  display: inline;
-}
+
 ul li figure img{
   border: 10px solid #FFFFFF;
 }
