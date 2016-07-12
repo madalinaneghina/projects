@@ -16,13 +16,7 @@ ul li {
   list-style: none;
   display: inline;
 }
-
-header, .about{
-  background: #FFFFFF;
-  margin: 0;
-  border: 0;
-}
-header .desktop{
+header{
   padding: 3% 0;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
@@ -34,9 +28,6 @@ header .desktop ul li{
   text-align: right;
 }
 header a img{
-  padding: 0;
-  margin: 0;
-  border: 0;
   float: left;
   margin-left: 15%;
 }
@@ -44,7 +35,7 @@ header a img{
 .content{
   background: #30c3a6;
   color: #FFFFFF;
-  padding: 5% 10%;
+  padding: 20% 10%;
 }
 .content button{
   background-color: #000000;
@@ -53,22 +44,22 @@ header a img{
   padding: 5px 10px;
 }
 .about{
-  padding: 5% 10%;
+  padding: 20% 0;
 }
 
 .photos{
   background: #30c3a6;
-  padding: 5% 10%;
   color: #FFFFFF;
   margin: 0;
   border: 0;
+  padding: 20% 0;
 }
 
 .contact{
   background: red;
   margin: 0;
   border: 0;
-  padding: 5%;
+  padding: 20% 0;
   color: #FFFFFF;
 }
 .about h1, .photos h1, .contact #title{
@@ -104,6 +95,7 @@ header a img{
   border: 5px solid #FFFFFF;
 }
 .photos figure figcaption{
+  padding: 0;
   display: block;
 }
 
@@ -112,12 +104,32 @@ header a img{
   color: black;
   margin: 10%;
   padding: 5%;
+  text-align: left;
+  width: auto;
+}
+.contact form p input{
+  width: 50%;
+  background: #FFFFFF;
+}
+.contact form .message p input{
+  height: 100px;
+}
+.contact form button{
+  background-color: #30c3a6;
+  border: 0;
+  width: 80%;
+  margin: 10%;
+  padding: 5% 10%;
+  color: #FFFFFF;
+}
+.contact form h1{
+  text-align: center;
 }
 
-#page-footer {
+.page-footer {
   background: #000000;
   margin: 0;
-  padding: 0;
+  padding: 5% 0;
   border: 0;
 
 }
@@ -135,37 +147,81 @@ footer img{
   width: 20px;
   margin: 5px;
 }
-
-
-@media only screen and (max-device-width: 480px){
-  .desktop{
-    visibility: hidden;
-  }
-  .mobile{
+.mobilemenu{
+  background: #000000;
+}
+.mobile{
     background: #000000;
     margin: 0;
-    padding: 0;
+    padding: 5% 0;
     border: 0;
   }
   .mobile ul li{
-    padding: 5%;
-    margin: 5%;
-    border: 5px;
+    padding: 5% 0;
+    margin: 0;
     display: block;
     text-align: center;
-    border-color: lightgrey;
+    width: 100%;
+    border-bottom: 1px solid grey;
   }
   .mobile ul li a{
-    color: lightgrey;
+    color: grey;
+    padding: 0;
+    margin: 0;
   }
 
-  #page-footer .mobile{
-    height: 10%;
+
+@media only screen and (max-device-width: 480px){
+  
+  .desktop{
+    visibility: hidden;
   }
-  #page-footer .mobile ul{
-    columns: 2;
+  
+  .photos{
+    padding: 20% 0;
   }
-  #page-footer .mobile li{
-    display: inline-block;
+  .photos figure{
+    display: block;
+    width: 80%;
+    margin: 10%;
+    padding: 0;
+    border: 0;
+  }
+
+  .photos figure img, .photos figure figcaption{
+    width: 100%;
+  }
+
+  .contact form p input{
+    width: 100%;
+    background: #FFFFFF;
+  }
+  .page-footer ul{
+    display: inline;
+  }
+  .page-footer ul li img{
+    margin: 15%;
+  }
+}
+
+@media only screen and (min-device-width: 481px){
+  .mobile{
+    visibility: hidden;
+  }
+  header a img{
+    margin: 0;
+  }
+  .photos figure{
+    width: 25%;
+  }
+
+  .contact{
+    padding: 5%;
+  }
+  .contact form .data, .contact form .message{
+    width: 50%;
+  }
+  .page-footer{
+    background: #000000;
   }
 }

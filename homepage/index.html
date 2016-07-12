@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Home Page</title>
         <link rel="stylesheet" href="css/style.css">
-        <link href='style.css' type='text/css' rel='stylesheet' />
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
         <header>
@@ -19,19 +19,19 @@
             </nav>
         </header>
 
-        <section class="content">
+        <div class="content">
             <h1 style="font-size: 40px">LOREM IPSUM</h1>
             <h2 style="font-weight: lighter; font-size: 30px">Lorem ipsum is simply dummy text of the printing and typesetting industry</h2>
             <button>Read</button>
-        </section>
+        </div>
 
-        <section class="about">
+        <div class="about">
             <h1>ABOUT US</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </section>
+        </div>
 
-        <section class="photos">
+        <div class="photos">
             <h1>PHOTOS</h1>
             <figure>
                 <a href='https://postimg.org/image/v6kcsvtgn/'><img src='https://s31.postimg.org/v6kcsvtgn/image.jpg' alt="click" width="50%" height="50%" /></a>
@@ -78,41 +78,50 @@
                     <p>Lorem ipsum is simply dummy text of the printing and typesetting industry</p>
                 </figcaption>
             </figure>
-        </section>
+        </div>
 
-        <section class="contact">
+        <div class="contact">
             <h1 id="title">CONTACT US</h1>
 
-            <form>
+            <form name="myForm" id="form" action="" onsubmit="return validateForm()" method="post">
                 <h1>Endava 2016!</h1>
-            
-                <p>Your name*</p>
-                <input type="text" name="name">
-                <p>Your email*</p>
-                <input type="text" name="email">
-
-
+                <div class="data">
+                <p>
+                    <p><label for="fname">Your name*</label></p>
+                    <input type="text" id="fname" name="fname">
+                </p>
+                <p>
+                    <p><label for="email">Your email*</label></p>
+                    <input type="email" name="email">
+                </p>
+                <p>
+                    <p><label for="phone">Contact Phone</label></p>
+                    <input type="text" name="phone">
+                </p>
+                </div>
+                <div class="message">
+                <p>
+                    <p><label for="message">Type your message</label></p>
+                    <input type="text" name="message">
+                </p>
+                </div>
+                <button id="submit">Send message</button>
             </form>
-        </section>
+        </div>
 
-        <nav class="mobile">
+        <div class="mobilemenu">
+            <nav class="mobile">
+                <ul>
+                    <li><a href='#about'>ABOUT</a></li>
+                    <li><a href='#photos'>PHOTOS</a></li>
+                    <li><a href='#contact'>CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <footer class="page-footer">
             <ul>
-                <li><a href='#about'>ABOUT</a></li>
-                <li><a href='#photos'>PHOTOS</a></li>
-                <li><a href='#contact'>CONTACT</a></li>
-            </ul>
-        </nav>
-
-
-        <footer id="page-footer">
-            <ul class="desktop">
-                <li><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT28IFXfIZh2QOWyBSQDhi1EY7gcUm3OuKPCRQGhdn2zGAtm9b8Nw" alt="twitter" /></li>
-                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xXPPaIYyLL7NhHvUV36Cegdq4s_bqDIiE8Mcj5EZ6usTcWC4" alt="facebook" /></li>
-                <li><img src="https://s31.postimg.org/t8l39zy4r/google.png" alt="g+" /></li>
-                <li><img src="http://www.iconsdb.com/icons/preview/white/github-10-xxl.png" alt="git" /></li>
-                <li>Internship Endava 2016</li>
-            </ul>
-            <ul class="mobile">
                 <li><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT28IFXfIZh2QOWyBSQDhi1EY7gcUm3OuKPCRQGhdn2zGAtm9b8Nw" alt="twitter" /></li>
                 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xXPPaIYyLL7NhHvUV36Cegdq4s_bqDIiE8Mcj5EZ6usTcWC4" alt="facebook" /></li>
                 <li><img src="https://s31.postimg.org/t8l39zy4r/google.png" alt="g+" /></li>
