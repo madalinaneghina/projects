@@ -27,7 +27,7 @@ nav ul li{
   padding: 40px;
   text-align: right;
 }
-nav ul li:first-child{
+nav a img{
   padding: 0;
   margin: 0;
   border: 0;
@@ -104,8 +104,9 @@ footer ul{
   padding: 2%;
   border: 0;
   display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
+  justify-content: center;
+  align-items: center;
+  /*float: right;*/
 }
 footer img{
   width: 20px;
