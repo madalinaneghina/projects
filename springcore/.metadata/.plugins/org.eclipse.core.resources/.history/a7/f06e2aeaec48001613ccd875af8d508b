@@ -1,0 +1,20 @@
+package com.example.spring.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.spring.domain.User;
+import com.example.spring.service.UserService;
+
+public class UserController {
+	@Autowired
+	private UserService userService;
+	
+	public void createUser(User user){
+		// call UserService here
+		userService.save(user);
+	}
+	public void getUser(int id){
+		userService.get(id);
+		
+	}
+}

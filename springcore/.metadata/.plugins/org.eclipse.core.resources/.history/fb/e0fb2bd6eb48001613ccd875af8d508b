@@ -1,0 +1,49 @@
+package com.example.spring.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+import com.example.spring.config.Config;
+import com.example.spring.domain.User;
+import com.example.spring.repository.UserRepository;
+import com.example.spring.service.UserService;
+
+@Component
+public class UserServiceOtherImpl implements UserService, ApplicationContextAware{
+
+	private AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+	private UserRepository userRepository = context.getBean(UserRepository.class);
+	
+	@Override
+	public List<User> list() {
+		// TODO Auto-generated method stub
+		userRepository.list();
+		return null;
+	}
+
+	@Override
+	public User get(int id) {
+		// TODO Auto-generated method stub
+		userRepository.get(id);
+		return null;
+	}
+
+	@Override
+	public void save(User user) {
+		// TODO Auto-generated method stub
+		userRepository.save(user);
+		
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext arg0) throws BeansException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
