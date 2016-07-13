@@ -11,12 +11,19 @@ public class UserController {
 	@Qualifier("service2")
 	private UserService userService;
 	
+	public UserService getUserService() {
+		return userService;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 	public void createUser(User user){
 		// call UserService here
 		userService.save(user);
 	}
 	public void getUser(int id){
 		userService.get(id);
+		System.out.println("get user");
 		
 	}
 }

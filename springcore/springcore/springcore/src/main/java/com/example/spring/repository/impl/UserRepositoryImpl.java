@@ -2,6 +2,8 @@ package com.example.spring.repository.impl;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.stereotype.Component;
@@ -28,6 +30,10 @@ public class UserRepositoryImpl implements UserRepository{
 	@Override
 	public void save(User user) {
 		System.out.println("Save user");
+	}
+	@PostConstruct
+	public void init(){
+		System.out.println("postconstruct " + this);
 	}
 
 }

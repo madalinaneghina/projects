@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="userRepository" class="com.example.spring.repository.impl.UserRepositoryImpl">
+	</bean>
+	
+	<bean id="applicationContext" class="ApplicationContext"></bean>
+	
+	<bean id="service3" class="com.example.spring.service.impl.UserServiceOtherImpl">
+		<property name="context"><ref bean="applicationContext"/> </property>
+		<property name="userRepository" ref="userRepository"/>
+	</bean>
+	
+	
+
+</beans>
