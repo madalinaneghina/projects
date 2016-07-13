@@ -1,0 +1,28 @@
+package com.example.spring.service.impl;
+
+import java.util.List;
+
+import com.example.spring.domain.User;
+import com.example.spring.service.UserService;
+
+public class UserServiceOtherImpl implements UserService{
+
+	@Override
+	public List<User> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
