@@ -125,33 +125,10 @@ header a img{
 .contact form h1{
   text-align: center;
 }
-
-.page-footer {
-  background: #000000;
-  margin: 0;
-  padding: 5% 0;
-  border: 0;
-
-}
-footer ul{
-  color: #FFFFFF;
-  margin: 0;
-  padding: 2%;
-  border: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*float: right;*/
-}
-footer img{
-  width: 20px;
-  margin: 5px;
-}
 .mobilemenu{
-  background: #000000;
-}
-.mobile{
     background: #000000;
+  }
+  .mobile{
     margin: 0;
     padding: 5% 0;
     border: 0;
@@ -169,10 +146,25 @@ footer img{
     padding: 0;
     margin: 0;
   }
-
-
+.page-footer {
+  background: #000000;
+  margin: 0;
+  padding: 5% 0;
+  border: 0;
+}
+footer ul{
+  background: #000000;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 2%;
+  border: 0;
+  /*float: right;*/
+}
+footer img{
+  width: 20px;
+  margin: 5px;
+}
 @media only screen and (max-device-width: 480px){
-  
   .desktop{
     visibility: hidden;
   }
@@ -196,6 +188,7 @@ footer img{
     width: 100%;
     background: #FFFFFF;
   }
+  
   .page-footer ul{
     display: inline;
   }
@@ -220,8 +213,7 @@ footer img{
   }
   .contact form .data, .contact form .message{
     width: 50%;
+    display: inline;
   }
-  .page-footer{
-    background: #000000;
-  }
+  
 }
