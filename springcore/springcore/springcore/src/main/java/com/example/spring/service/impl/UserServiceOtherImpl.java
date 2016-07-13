@@ -23,6 +23,22 @@ public class UserServiceOtherImpl implements UserService, ApplicationContextAwar
 	private UserRepository userRepository;
 	
 	
+	public ApplicationContext getContext() {
+		return context;
+	}
+
+	public void setContext(ApplicationContext context) {
+		this.context = context;
+	}
+
+	public UserRepository getUserRepository() {
+		return userRepository;
+	}
+
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
 	@Override
 	public List<User> list() {
 		// TODO Auto-generated method stub

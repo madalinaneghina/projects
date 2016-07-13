@@ -5,5 +5,12 @@
 
 	<bean id="userRepository" class="com.example.spring.repository.impl.UserRepositoryImpl">
 	</bean>
-
+	
+	<bean id="service3" class="com.example.spring.service.impl.UserServiceOtherImpl">
+		<property name="userRepository" ref="userRepository"/>
+	</bean>
+	
+	<bean id="userController" class="com.example.spring.controller.UserController">
+		<property name="userService" ref="service3"></property>
+	</bean>
 </beans>
