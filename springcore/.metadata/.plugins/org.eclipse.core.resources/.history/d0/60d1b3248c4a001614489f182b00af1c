@@ -1,0 +1,6 @@
+package com.endava.internship.rest.repository;
+
+@Repository
+public class AuthorsRepository {
+
+}

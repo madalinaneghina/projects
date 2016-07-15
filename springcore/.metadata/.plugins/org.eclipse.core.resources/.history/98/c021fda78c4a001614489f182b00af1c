@@ -1,0 +1,5 @@
+package com.endava.internship.rest.service;
+
+public class AuthorsService {
+
+}

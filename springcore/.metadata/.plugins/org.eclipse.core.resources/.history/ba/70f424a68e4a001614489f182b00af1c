@@ -1,0 +1,33 @@
+package com.endava.internship.rest.repository;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Repository;
+
+import com.endava.internship.rest.model.Author;
+import com.endava.internship.rest.model.Book;
+
+@Repository
+public class AuthorsRepository {
+	private List<Author> authors;
+
+	public List<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+	
+	@PostConstruct
+	public void init(){
+		Author author = new Author("Jules Verne");
+		authors.add(author);
+		
+		author = new Author("Ana Blandiana");
+		author.addBook(new Book("Furnicile"));
+	}
+
+}

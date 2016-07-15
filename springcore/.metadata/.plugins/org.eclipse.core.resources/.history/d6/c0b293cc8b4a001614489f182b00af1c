@@ -1,0 +1,5 @@
+package com.endava.internship.rest.model;
+
+public class Author {
+
+}

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Projects\springcore\internship-rest"/>
+		<item value="D:\Projects\springcore\springmvc"/>
 		<item value="D:\Projects\springcore\springcore"/>
 		<item value="C:\Users\mneghina\workspace\HelloSpring"/>
 	</list>
