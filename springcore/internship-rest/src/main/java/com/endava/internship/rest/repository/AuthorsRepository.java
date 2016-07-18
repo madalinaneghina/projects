@@ -23,7 +23,7 @@ public class AuthorsRepository {
 	}
 	public Author getAuthorById(Integer authorId){
 		for(Author author : authors){
-			if(author.getId().equals(authorId)){
+			if(author.getId() == authorId){
 				return author;
 			}
 		}
@@ -42,22 +42,25 @@ public class AuthorsRepository {
 		authors = new ArrayList<>();
 		
 		Author author = new Author(1, "Jules Verne");
+		author.addBook(new Book(1, "De la pamant la luna"));
+		author.addBook(new Book(2, "Calatorie in jurul pamantului"));
 		authors.add(author);
 		
-		author = new Author(2, "Ana Blandiana");
-		author.addBook(new Book("Furnicile"));
+		Author author1 = new Author(2, "Ana Blandiana");
+		author1.addBook(new Book(1, "Furnicile"));
+		authors.add(author1);
+		
+
+		Author author2 = new Author(3, "Sandu Alexandra");
+		author2.addBook(new Book(1, "Crinul"));
+		authors.add(author2);
 	}
 
 	public void createAuthor(Author author) {
-		// TODO Auto-generated method stub
-		
 		authors.add(author);
-		
 	}
 
 	public void createBook(Integer authorId, Book book) {
-		// TODO Auto-generated method stub
-		
 		for(Author author : authors){
 			if(author.getId() == authorId){
 				author.addBook(book);
@@ -74,6 +77,25 @@ public class AuthorsRepository {
 			}
 		}
 		return books;
+	}
+
+	public Book getBookById(Integer authorId, Integer bookId) {
+		for(Author author : authors){
+			if(author.getId() == authorId){
+				for(Book book : author.getBooks()){
+					if(book.getId() == bookId){
+						return book;
+					}
+				}
+				
+			}
+		}
+		return new Book(0, "Unknown");
+	}
+
+	public boolean deleteAuthors() {
+		return authors.removeAll(authors);
+		
 	}
 
 }

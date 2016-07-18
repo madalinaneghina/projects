@@ -31,14 +31,21 @@ public class AuthorsService {
 	}
 
 	public Author createAuthor(Author author) {
-		// TODO Auto-generated method stub
 		authorsRepository.createAuthor(author);
 		return author;
 	}
 
 	public Book createBook(Integer authorId, Book book) {
-		// TODO Auto-generated method stub
 		authorsRepository.createBook(authorId, book);
 		return book;
+	}
+
+	public Book getBookById(Integer authorId, Integer bookId) {
+		return authorsRepository.getBookById(authorId, bookId);
+	}
+
+	public boolean deleteAuthors() {
+		return authorsRepository.deleteAuthors();
+		
 	}
 }

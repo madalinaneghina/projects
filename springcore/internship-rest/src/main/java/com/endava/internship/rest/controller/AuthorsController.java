@@ -62,19 +62,59 @@ public class AuthorsController {
 
         return new ResponseEntity<>(authorResource, HttpStatus.CREATED);
     }
+	
+	@RequestMapping(path = "/authors", method = RequestMethod.DELETE)
+	public HttpEntity<Resources<Resource<Author>>> deleteAuthors(){
+		if(authorsService.deleteAuthors()){
+		return new ResponseEntity<>(HttpStatus.OK);
+		}
+		else{
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@RequestMapping(path = "/authors/{authorId}", method = RequestMethod.DELETE)
+	public HttpEntity<Resource<Author>> deleteAuthor(@PathVariable Integer authorId){
+		Author author = this.authorsService.getAuthorById(authorId);
+		
+		Resource<Author> authorResource = new Resource<>(author);
+		authorResource.add(linkTo(methodOn(AuthorsController.class).getAuthor(authorId)).withSelfRel());
+		
+		return new ResponseEntity<>(authorResource, HttpStatus.OK);
+	}
 
 	@RequestMapping(path = "/authors/{authorId}/books", method = RequestMethod.GET)
 	public HttpEntity<Resources<Resource<Book>>> getBooks(@PathVariable Integer authorId){
 		
-		List<Book> books = this.authorsService.getBooksByAuthor(authorId);
+		List<Book> books = authorsService.getBooksByAuthor(authorId);
 		
 		Resources<Resource<Book>> booksResources = Resources.wrap(books);
 		booksResources.add(linkTo(methodOn(AuthorsController.class).getBooks(authorId)).withSelfRel());
 		
-		/*for(Resource<Book> booksResource : booksResources){
-			booksResource.add(linkTo(methodOn(AuthorsController.class).getBook(booksResource.getContent().getName())).withSelfRel());
-		}*/
+		for(Resource<Book> booksResource : booksResources){
+			booksResource.add(linkTo(methodOn(AuthorsController.class).getBook(authorId, booksResource.getContent().getId())).withSelfRel());
+		}
 		
 		return new ResponseEntity<>(booksResources, HttpStatus.OK);
 	}
+	@RequestMapping(path = "/authors/{authorId}/books/{bookId}", method = RequestMethod.GET)
+	public HttpEntity<Resource<Book>> getBook(@PathVariable Integer authorId, @PathVariable Integer bookId){
+		
+		Book book = authorsService.getBookById(authorId, bookId);
+		
+		Resource<Book> bookResource = new Resource<>(book);
+		bookResource.add(linkTo(methodOn(AuthorsController.class).getBook(authorId, bookId)).withSelfRel());
+		
+		return new ResponseEntity<>(bookResource, HttpStatus.OK);
+	}
+	
+	@RequestMapping(path = "/authors/{authorId}/books", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public HttpEntity<Resource<Book>> createBook(@PathVariable Integer authorId, @RequestBody Book book) {
+		Book createdBook = authorsService.createBook(authorId, book);
+
+        Resource<Book> bookResource = new Resource<>(createdBook);
+        bookResource.add(linkTo(methodOn(AuthorsController.class).getAuthor(createdBook.getId())).withSelfRel());
+
+        return new ResponseEntity<>(bookResource, HttpStatus.CREATED);
+    }
 }

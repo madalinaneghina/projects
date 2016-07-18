@@ -6,8 +6,6 @@ public class Artist {
 
     private String name;
     
-    
-
     public Artist(Integer id, String name) {
         this.id = id;
         this.name = name;
